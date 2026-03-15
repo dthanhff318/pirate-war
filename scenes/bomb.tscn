@@ -1,0 +1,112 @@
+[gd_scene format=3 uid="uid://c8r4d1uu2eki1"]
+
+[ext_resource type="Script" uid="uid://cm7ba5xnredha" path="res://scripts/bomb.gd" id="1_bomb_script"]
+[ext_resource type="Texture2D" uid="uid://dm2uhsol7j06q" path="res://assets/Pirate Bomb/Sprites/7-Objects/1-BOMB/3-Explotion/1.png" id="1_o4q78"]
+[ext_resource type="Texture2D" uid="uid://d0l2cmvs1lhi0" path="res://assets/Pirate Bomb/Sprites/7-Objects/1-BOMB/3-Explotion/2.png" id="2_admb8"]
+[ext_resource type="Texture2D" uid="uid://crejgypx87mnb" path="res://assets/Pirate Bomb/Sprites/7-Objects/1-BOMB/3-Explotion/3.png" id="3_q6q46"]
+[ext_resource type="Texture2D" uid="uid://bq6wlfjgpywdi" path="res://assets/Pirate Bomb/Sprites/7-Objects/1-BOMB/3-Explotion/4.png" id="4_btcqa"]
+[ext_resource type="Texture2D" uid="uid://d37bqpwulfde4" path="res://assets/Pirate Bomb/Sprites/7-Objects/1-BOMB/3-Explotion/5.png" id="5_x3vyy"]
+[ext_resource type="Texture2D" uid="uid://dlm5y8cwdsgbs" path="res://assets/Pirate Bomb/Sprites/7-Objects/1-BOMB/3-Explotion/6.png" id="6_ms7pa"]
+[ext_resource type="Texture2D" uid="uid://ibki42fdyvft" path="res://assets/Pirate Bomb/Sprites/7-Objects/1-BOMB/3-Explotion/7.png" id="7_ypqo1"]
+[ext_resource type="Texture2D" uid="uid://c4b4fkk346j4q" path="res://assets/Pirate Bomb/Sprites/7-Objects/1-BOMB/3-Explotion/8.png" id="8_rfvc7"]
+[ext_resource type="Texture2D" uid="uid://bb7ijwb1lcx3i" path="res://assets/Pirate Bomb/Sprites/7-Objects/1-BOMB/3-Explotion/9.png" id="9_1m0l3"]
+[ext_resource type="Texture2D" uid="uid://ba8ek04g3ae1" path="res://assets/Pirate Bomb/Sprites/7-Objects/1-BOMB/2-Bomb On/1.png" id="10_r78ck"]
+[ext_resource type="Texture2D" uid="uid://bpc4edh0n3rmu" path="res://assets/Pirate Bomb/Sprites/7-Objects/1-BOMB/2-Bomb On/2.png" id="11_xee51"]
+[ext_resource type="Texture2D" uid="uid://dwi0ug5wrl6ky" path="res://assets/Pirate Bomb/Sprites/7-Objects/1-BOMB/2-Bomb On/3.png" id="12_rlbl3"]
+[ext_resource type="Texture2D" uid="uid://dcqifs0bcuh4y" path="res://assets/Pirate Bomb/Sprites/7-Objects/1-BOMB/2-Bomb On/4.png" id="13_jutgn"]
+[ext_resource type="Texture2D" uid="uid://cyry8vy57x0is" path="res://assets/Pirate Bomb/Sprites/7-Objects/1-BOMB/2-Bomb On/5.png" id="14_ndjmo"]
+[ext_resource type="Texture2D" uid="uid://bivvjm0nuspqh" path="res://assets/Pirate Bomb/Sprites/7-Objects/1-BOMB/2-Bomb On/6.png" id="15_hklwp"]
+[ext_resource type="Texture2D" uid="uid://bw8a3f3x7fxr4" path="res://assets/Pirate Bomb/Sprites/7-Objects/1-BOMB/2-Bomb On/7.png" id="16_y8dg1"]
+[ext_resource type="Texture2D" uid="uid://bppak4ufbgrhc" path="res://assets/Pirate Bomb/Sprites/7-Objects/1-BOMB/2-Bomb On/8.png" id="17_1ttag"]
+[ext_resource type="Texture2D" uid="uid://bg37o2mwmbybj" path="res://assets/Pirate Bomb/Sprites/7-Objects/1-BOMB/2-Bomb On/9.png" id="18_20fad"]
+[ext_resource type="Texture2D" uid="uid://dmdoesmfg1yth" path="res://assets/Pirate Bomb/Sprites/7-Objects/1-BOMB/2-Bomb On/10.png" id="19_hpdjc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6bl7j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_o4q78")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_admb8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_q6q46")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_btcqa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_x3vyy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ms7pa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ypqo1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_rfvc7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_1m0l3")
+}],
+"loop": false,
+"name": &"bomb_explotion",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_r78ck")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_xee51")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_rlbl3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_jutgn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_ndjmo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_hklwp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_y8dg1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_1ttag")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_20fad")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_hpdjc")
+}],
+"loop": true,
+"name": &"bomb_on",
+"speed": 20.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v55i3"]
+radius = 14.142136
+
+[node name="RigidBody2D" type="RigidBody2D" unique_id=534178114]
+script = ExtResource("1_bomb_script")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=184170860]
+position = Vector2(-1.000001, -19)
+scale = Vector2(0.9667968, 1.0062212)
+sprite_frames = SubResource("SpriteFrames_6bl7j")
+animation = &"bomb_on"
+frame_progress = 0.64768684
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1354132899]
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_v55i3")
+
+[node name="Timer" type="Timer" parent="." unique_id=1354596096]
+wait_time = 3.0
