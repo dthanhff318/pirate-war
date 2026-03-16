@@ -11,42 +11,65 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var is_jumping = false
 var was_on_floor = false
 
+# Knockback state
+var knockback_velocity = Vector2.ZERO
+var knockback_timer = 0.0
+const KNOCKBACK_DURATION = 0.3  # How long knockback lasts
+
 # Bomb spawning
 @export var bomb_scene: PackedScene  # Drag bomb.tscn here in Inspector
 const BOMB_SPAWN_OFFSET = Vector2(0, 0)  # Spawn bomb in front of player
+
+# Virtual joystick reference
+var joystick: Control = null
+
+func _ready():
+	# Find joystick in scene tree
+	joystick = get_tree().get_first_node_in_group("virtual_joystick")
 
 func _physics_process(delta):
 	# Track floor state
 	var currently_on_floor = is_on_floor()
 
-	# Add gravity
-	if not currently_on_floor:
-		velocity.y += gravity * delta
+	# Get input direction from keyboard OR joystick
+	var direction = get_movement_direction()
+
+	# Handle knockback timer
+	if knockback_timer > 0:
+		knockback_timer -= delta
+		# During knockback, use knockback velocity
+		velocity = knockback_velocity
+		# Apply gravity to knockback for parabolic motion
+		if not currently_on_floor:
+			velocity.y += gravity * delta
+			knockback_velocity = velocity  # Update stored velocity
 	else:
-		# Reset jump state when landing
-		is_jumping = false
+		# Normal movement when not in knockback
+		# Add gravity
+		if not currently_on_floor:
+			velocity.y += gravity * delta
+		else:
+			# Reset jump state when landing
+			is_jumping = false
 
-	# Handle jump with anticipation
-	if Input.is_action_just_pressed("ui_accept") and currently_on_floor:
-		# Play anticipation animation briefly
-		play_animation("jump_anticipation")
-		# Small delay for anticipation (optional - comment out if too slow)
-		# await get_tree().create_timer(0.1).timeout
-		velocity.y = JUMP_VELOCITY
-		is_jumping = true
+		# Handle jump with anticipation
+		if Input.is_action_just_pressed("ui_accept") and currently_on_floor:
+			# Play anticipation animation briefly
+			play_animation("jump_anticipation")
+			# Small delay for anticipation (optional - comment out if too slow)
+			# await get_tree().create_timer(0.1).timeout
+			velocity.y = JUMP_VELOCITY
+			is_jumping = true
 
-	# Handle bomb spawning (Q key)
-	if Input.is_action_just_pressed("throw_bomb"):  # Q key - configure in Project Settings → Input Map
-		spawn_bomb()
+		# Handle bomb spawning (Q key)
+		if Input.is_action_just_pressed("throw_bomb"):  # Q key - configure in Project Settings → Input Map
+			spawn_bomb()
 
-	# Get input direction: -1, 0, 1
-	var direction = Input.get_axis("ui_left", "ui_right")
-
-	# Apply horizontal movement
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		# Apply horizontal movement
+		if direction:
+			velocity.x = direction * SPEED
+		else:
+			velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	# Update animation
 	update_animation(direction, currently_on_floor)
@@ -110,3 +133,19 @@ func spawn_bomb():
 
 	# Add bomb to scene (same parent as player)
 	get_parent().add_child(bomb)
+
+func apply_knockback(knockback: Vector2):
+	# Called by bomb explosion
+	knockback_velocity = velocity + knockback
+	knockback_timer = KNOCKBACK_DURATION
+
+func get_movement_direction() -> float:
+	# Get input from keyboard or joystick
+	var keyboard_input = Input.get_axis("ui_left", "ui_right")
+
+	# If joystick exists and is being used, use it
+	if joystick and joystick.get_direction().length() > 0:
+		return joystick.get_direction().x
+
+	# Otherwise use keyboard
+	return keyboard_input

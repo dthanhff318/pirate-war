@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://bssj4m8qghbxv"]
+
+[ext_resource type="Script" uid="uid://cbxr4vhscn3vm" path="res://scripts/virtual_joystick.gd" id="1_joystick_script"]
+
+[node name="VirtualJoystick" type="Control" unique_id=1126056046]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 6.0
+offset_top = 4.0
+offset_right = 220.0
+offset_bottom = 207.0
+script = ExtResource("1_joystick_script")
+
+[node name="Base" type="ColorRect" parent="." unique_id=79721630]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.0050000004
+anchor_bottom = 0.0050000004
+offset_left = -76.0
+offset_top = -75.015
+offset_right = 74.0
+offset_bottom = 74.985
+color = Color(0.2, 0.2, 0.2, 0.5)
+
+[node name="Stick" type="ColorRect" parent="Base" unique_id=163943046]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.48700002
+anchor_top = 0.5
+anchor_right = 0.48700002
+anchor_bottom = 0.5
+offset_left = -23.050003
+offset_top = -22.0
+offset_right = 22.949997
+offset_bottom = 25.0
+color = Color(0.8, 0.8, 0.8, 0.8)

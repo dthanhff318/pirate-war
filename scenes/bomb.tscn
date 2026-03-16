@@ -92,20 +92,20 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v55i3"]
-radius = 14.142136
+radius = 14.0
 
 [node name="RigidBody2D" type="RigidBody2D" unique_id=534178114]
 script = ExtResource("1_bomb_script")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=184170860]
-position = Vector2(-1.000001, -19)
+position = Vector2(-1, -18.000002)
 scale = Vector2(0.9667968, 1.0062212)
 sprite_frames = SubResource("SpriteFrames_6bl7j")
 animation = &"bomb_on"
 frame_progress = 0.64768684
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1354132899]
-position = Vector2(0, -1)
+position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_v55i3")
 
 [node name="Timer" type="Timer" parent="." unique_id=1354596096]
