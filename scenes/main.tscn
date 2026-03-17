@@ -2,7 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://cayyyd8clghbo" path="res://assets/Pirate Bomb/Sprites/8-Tile-Sets/Tile-Sets (64-64).png" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://s3o384yb45an" path="res://scenes/player.tscn" id="2_0wfyh"]
-[ext_resource type="PackedScene" uid="uid://bssj4m8qghbxv" path="res://scenes/virtual_joystick.tscn" id="3_sugp2"]
+[ext_resource type="Script" uid="uid://dp7x5dlla22jv" path="res://addons/virtual_joystick/scripts/virtual_joystick.gd" id="3_tefeu"]
+[ext_resource type="Texture2D" uid="uid://dis710ocwfupv" path="res://addons/virtual_joystick/sprites/joystick.png" id="4_o6xl0"]
+[ext_resource type="Texture2D" uid="uid://bng1a4e7i5m85" path="res://addons/virtual_joystick/sprites/stick.png" id="5_tipki"]
+[ext_resource type="Texture2D" uid="uid://dbv08kdklqmwf" path="res://addons/virtual_joystick/sprites/stick_pressed.png" id="6_85g3d"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_sugp2"]
 
@@ -488,14 +491,14 @@ navigation_visibility_mode = 1
 [node name="CharacterBody2D" parent="." unique_id=2137119633 instance=ExtResource("2_0wfyh")]
 position = Vector2(122, 145)
 
-[node name="UI" type="CanvasLayer" parent="." unique_id=1300314999]
+[node name="VirtualJoystick" type="Node2D" parent="CharacterBody2D" unique_id=1923828549]
+position = Vector2(-313, 138)
+scale = Vector2(0.8, 0.8)
+script = ExtResource("3_tefeu")
+zero_at_touch = true
+border = ExtResource("4_o6xl0")
+stick = ExtResource("5_tipki")
+stick_pressed = ExtResource("6_85g3d")
+metadata/_custom_type_script = "uid://dp7x5dlla22jv"
 
-[node name="VirtualJoystick" parent="UI" unique_id=1126056046 groups=["virtual_joystick"] instance=ExtResource("3_sugp2")]
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 28.0
-offset_top = -211.0
-offset_right = 178.0
-offset_bottom = -8.0
-grow_vertical = 0
+[connection signal="analogic_change" from="CharacterBody2D/VirtualJoystick" to="CharacterBody2D" method="_on_virtual_joystick_analogic_change"]
