@@ -149,3 +149,7 @@ func get_movement_direction() -> float:
 
 	# Otherwise use keyboard
 	return keyboard_input
+
+
+func _on_virtual_joystick_analogic_change(move: Vector2) -> void:
+	velocity = move
