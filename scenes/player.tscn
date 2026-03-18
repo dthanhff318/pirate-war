@@ -7,9 +7,12 @@
 [ext_resource type="Texture2D" uid="uid://7vwa17rc3vx7" path="res://assets/Pirate Bomb/Sprites/1-Player-Bomb Guy/1-Idle/3.png" id="3_pf23h"]
 [ext_resource type="Texture2D" uid="uid://da52pjq8lkyem" path="res://assets/Pirate Bomb/Sprites/1-Player-Bomb Guy/5-Fall/2.png" id="3_u2ulf"]
 [ext_resource type="Texture2D" uid="uid://crdjdlxyn4mdp" path="res://assets/Pirate Bomb/Sprites/1-Player-Bomb Guy/1-Idle/4.png" id="4_dt7fs"]
+[ext_resource type="Texture2D" uid="uid://gbhbaeoxlm3c" path="res://assets/Pirate Bomb/Sprites/1-Player-Bomb Guy/6-Ground/1.png" id="5_sc3ue"]
 [ext_resource type="Texture2D" uid="uid://c0ng7es0ugskk" path="res://assets/Pirate Bomb/Sprites/1-Player-Bomb Guy/1-Idle/5.png" id="5_wqfne"]
+[ext_resource type="Texture2D" uid="uid://blypo1s3uxlea" path="res://assets/Pirate Bomb/Sprites/1-Player-Bomb Guy/6-Ground/2.png" id="6_lxlsd"]
 [ext_resource type="Texture2D" uid="uid://bpxsf2yurcfon" path="res://assets/Pirate Bomb/Sprites/1-Player-Bomb Guy/1-Idle/6.png" id="6_wnwbv"]
 [ext_resource type="Texture2D" uid="uid://daaaj5nla0vd5" path="res://assets/Pirate Bomb/Sprites/1-Player-Bomb Guy/1-Idle/7.png" id="7_gl8cc"]
+[ext_resource type="Texture2D" uid="uid://bgfm8kcqstp0m" path="res://assets/Pirate Bomb/Sprites/1-Player-Bomb Guy/6-Ground/3.png" id="7_ha2mi"]
 [ext_resource type="Texture2D" uid="uid://dbahm06ago8a8" path="res://assets/Pirate Bomb/Sprites/1-Player-Bomb Guy/1-Idle/8.png" id="8_487ah"]
 [ext_resource type="Texture2D" uid="uid://b4r24vjigymx5" path="res://assets/Pirate Bomb/Sprites/1-Player-Bomb Guy/1-Idle/9.png" id="9_md1ol"]
 [ext_resource type="Texture2D" uid="uid://c38dysbny38b" path="res://assets/Pirate Bomb/Sprites/1-Player-Bomb Guy/1-Idle/10.png" id="10_bj30b"]
@@ -62,6 +65,20 @@ animations = [{
 "loop": true,
 "name": &"fall",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_sc3ue")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_lxlsd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ha2mi")
+}],
+"loop": true,
+"name": &"ground",
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 5.0,
@@ -221,7 +238,7 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_31cv2"]
 radius = 24.0
-height = 54.0
+height = 58.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=2137119633]
 script = ExtResource("1_script")
@@ -230,7 +247,8 @@ bomb_scene = ExtResource("49_u2ulf")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1398261567]
 position = Vector2(1, -3)
 sprite_frames = SubResource("SpriteFrames_ujl30")
-animation = &"fall"
+animation = &"ground"
+frame_progress = 0.27518427
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=532024478]
 position = Vector2(-1, 0)
