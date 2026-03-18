@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://dis710ocwfupv" path="res://addons/virtual_joystick/sprites/joystick.png" id="4_o6xl0"]
 [ext_resource type="Texture2D" uid="uid://bng1a4e7i5m85" path="res://addons/virtual_joystick/sprites/stick.png" id="5_tipki"]
 [ext_resource type="Texture2D" uid="uid://dbv08kdklqmwf" path="res://addons/virtual_joystick/sprites/stick_pressed.png" id="6_85g3d"]
-[ext_resource type="PackedScene" uid="uid://cx8cf10v37u2t" path="res://enemy-bald.tscn" id="7_jyhfs"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_sugp2"]
 
@@ -490,19 +489,13 @@ collision_visibility_mode = 1
 navigation_visibility_mode = 1
 
 [node name="main-player" parent="." unique_id=2137119633 instance=ExtResource("2_0wfyh")]
-position = Vector2(122, 145)
+position = Vector2(236, 379)
 
-[node name="VirtualJoystick" type="Node2D" parent="CharacterBody2D" unique_id=1923828549]
-position = Vector2(-313, 138)
+[node name="VirtualJoystick" type="Node2D" parent="main-player" unique_id=265770026 groups=["virtual_joystick"]]
+position = Vector2(-292, 122)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("3_tefeu")
-zero_at_touch = true
 border = ExtResource("4_o6xl0")
 stick = ExtResource("5_tipki")
 stick_pressed = ExtResource("6_85g3d")
 metadata/_custom_type_script = "uid://dp7x5dlla22jv"
-
-[node name="CharacterBody2D" parent="." unique_id=2050700926 instance=ExtResource("7_jyhfs")]
-position = Vector2(729, 572)
-
-[connection signal="analogic_change" from="CharacterBody2D/VirtualJoystick" to="CharacterBody2D" method="_on_virtual_joystick_analogic_change"]

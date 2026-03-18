@@ -21,7 +21,7 @@ const KNOCKBACK_DURATION = 0.3  # How long knockback lasts
 const BOMB_SPAWN_OFFSET = Vector2(0, 0)  # Spawn bomb in front of player
 
 # Virtual joystick reference
-var joystick: Control = null
+var joystick: Node2D = null
 
 func _ready():
 	# Find joystick in scene tree
@@ -144,8 +144,8 @@ func get_movement_direction() -> float:
 	var keyboard_input = Input.get_axis("ui_left", "ui_right")
 
 	# If joystick exists and is being used, use it
-	if joystick and joystick.get_direction().length() > 0:
-		return joystick.get_direction().x
+	if joystick and joystick.get_value().length() > 0:
+		return joystick.get_value().x
 
 	# Otherwise use keyboard
 	return keyboard_input
