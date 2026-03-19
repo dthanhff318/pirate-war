@@ -1,5 +1,10 @@
 extends CharacterBody2D
 
+# Health system
+signal health_changed(new_health, max_health)
+@export var max_health: int = 100
+var current_health: int = 100
+
 # Movement settings
 const SPEED = 200.0
 const JUMP_VELOCITY = -500.0
@@ -26,6 +31,8 @@ var joystick: Node2D = null
 func _ready():
 	# Find joystick in scene tree
 	joystick = get_tree().get_first_node_in_group("virtual_joystick")
+	# Emit initial health
+	health_changed.emit(current_health, max_health)
 
 func _physics_process(delta):
 	# Track floor state
@@ -53,7 +60,7 @@ func _physics_process(delta):
 			is_jumping = false
 
 		# Handle jump with anticipation
-		if Input.is_action_just_pressed("ui_accept") and currently_on_floor:
+		if Input.is_action_just_pressed("jump") and currently_on_floor:
 			# Play anticipation animation briefly
 			play_animation("jump_anticipation")
 			# Small delay for anticipation (optional - comment out if too slow)
@@ -153,3 +160,18 @@ func get_movement_direction() -> float:
 
 func _on_virtual_joystick_analogic_change(move: Vector2) -> void:
 	velocity = move
+
+# Health management functions
+func take_damage(amount: int):
+	current_health = max(0, current_health - amount)
+	health_changed.emit(current_health, max_health)
+	if current_health <= 0:
+		die()
+
+func heal(amount: int):
+	current_health = min(max_health, current_health + amount)
+	health_changed.emit(current_health, max_health)
+
+func die():
+	print("Player died!")
+	# Add death logic here later

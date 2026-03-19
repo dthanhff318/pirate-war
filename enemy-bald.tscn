@@ -35,6 +35,20 @@
 [ext_resource type="Texture2D" uid="uid://dqjbbant8ijgs" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/1-Idle/32.png" id="32_blymt"]
 [ext_resource type="Texture2D" uid="uid://u8nux73c74r6" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/1-Idle/33.png" id="33_oai2u"]
 [ext_resource type="Texture2D" uid="uid://bcwmh8pi7n6nf" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/1-Idle/34.png" id="34_o463s"]
+[ext_resource type="Texture2D" uid="uid://bv82q8eregm37" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/2-Run/1.png" id="36_0jnl0"]
+[ext_resource type="Texture2D" uid="uid://bs5e2ekjgshn4" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/2-Run/2.png" id="37_54a55"]
+[ext_resource type="Texture2D" uid="uid://dcy8pp427ls0y" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/2-Run/3.png" id="38_uhhfu"]
+[ext_resource type="Texture2D" uid="uid://d162txjep4rdl" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/2-Run/4.png" id="39_tblmb"]
+[ext_resource type="Texture2D" uid="uid://cvc04372ehm1i" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/2-Run/5.png" id="40_ng502"]
+[ext_resource type="Texture2D" uid="uid://bn72wwkl86f62" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/2-Run/6.png" id="41_1ly5p"]
+[ext_resource type="Texture2D" uid="uid://o0o12ppiy7h7" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/2-Run/7.png" id="42_bhwq2"]
+[ext_resource type="Texture2D" uid="uid://782bulk7epsf" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/2-Run/8.png" id="43_7ftpr"]
+[ext_resource type="Texture2D" uid="uid://dcmfn5aane6ri" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/2-Run/9.png" id="44_xkdq2"]
+[ext_resource type="Texture2D" uid="uid://bk2uxwlqunukc" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/2-Run/10.png" id="45_edow4"]
+[ext_resource type="Texture2D" uid="uid://ctb8i6cwirrq1" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/2-Run/11.png" id="46_7ae6b"]
+[ext_resource type="Texture2D" uid="uid://ye65m3au8cks" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/2-Run/12.png" id="47_i6c03"]
+[ext_resource type="Texture2D" uid="uid://bmyh6g5g20b3c" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/2-Run/13.png" id="48_4p8qf"]
+[ext_resource type="Texture2D" uid="uid://or05bu6r5413" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/2-Run/14.png" id="49_ghfav"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bd5k0"]
 animations = [{
@@ -144,21 +158,67 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("36_0jnl0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_54a55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_uhhfu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_tblmb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_ng502")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_1ly5p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_bhwq2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_7ftpr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_xkdq2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_edow4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_7ae6b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_i6c03")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_4p8qf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_ghfav")
+}],
+"loop": true,
+"name": &"run",
+"speed": 20.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nmjvq"]
 radius = 18.0
 height = 62.0
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=2050700926]
+[node name="bald-enemy" type="CharacterBody2D" unique_id=2050700926]
 script = ExtResource("1_enemy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=85395308]
 position = Vector2(1.6347659, -0.95898485)
 scale = Vector2(0.8687377, 1.0137011)
 sprite_frames = SubResource("SpriteFrames_bd5k0")
-animation = &"idle"
-frame_progress = 0.77852553
+animation = &"run"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1437881134]
 position = Vector2(-1, 3)
