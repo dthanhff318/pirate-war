@@ -10,19 +10,16 @@ config_version=5
 
 [application]
 
-config/name="pirate war"
-run/main_scene="uid://c22561nqqlr74"
+config/name="Pirate war"
+run/main_scene="uid://bc5xa5gh3kb4t"
 config/features=PackedStringArray("4.6", "Mobile")
-config/icon="res://icon.svg"
+config/icon="uid://dmdoesmfg1yth"
 
 [display]
 
-window/size/viewport_width=1152
-window/size/viewport_height=648
 window/size/mode=2
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
-window/handheld/orientation=0
 
 [editor_plugins]
 

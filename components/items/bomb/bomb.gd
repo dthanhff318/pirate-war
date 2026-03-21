@@ -5,7 +5,7 @@ const EXPLOSION_TIME = 2.0
 
 # Explosion properties
 @export var explosion_radius = 150.0  # Explosion radius
-@export var explosion_damage = 50.0  # Damage dealt
+@export var explosion_damage = 10.0  # Damage dealt (10 HP per explosion)
 @export var knockback_force = 500.0  # Knockback force
 
 func _ready():

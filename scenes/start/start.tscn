@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://bc5xa5gh3kb4t"]
+
+[ext_resource type="Script" uid="uid://ccr0o0mrpidi3" path="res://scenes/start/start_menu.gd" id="1_662lp"]
+[ext_resource type="FontFile" uid="uid://dmthamaat6tbp" path="res://assets/fonts/Press_Start_2P/PressStart2P-Regular.ttf" id="2_ae20m"]
+[ext_resource type="Texture2D" uid="uid://crvd56tsktkx1" path="res://assets/sprites/start-scene-thumb.png" id="2_oeh0t"]
+
+[node name="Control" type="Control" unique_id=1744358857]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_662lp")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1604559913]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=1085749775]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer" unique_id=727832280]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ae20m")
+theme_override_font_sizes/font_size = 48
+text = "PIRATE WAR"
+horizontal_alignment = 1
+
+[node name="SpacerTop" type="Control" parent="CenterContainer/VBoxContainer" unique_id=1083681168]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="StartButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=962886734]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Start Game"
+
+[node name="SettingsButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=85535664]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Settings"
+
+[node name="QuitButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=181799390]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Quit"
+
+[node name="Sprite2D" type="TextureRect" parent="." unique_id=2048340179]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.4269841
+anchor_bottom = 1.46
+offset_right = -491.88562
+offset_bottom = -298.08002
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.4269841, 1.46)
+mouse_filter = 2
+texture = ExtResource("2_oeh0t")
+metadata/_edit_use_anchors_ = true

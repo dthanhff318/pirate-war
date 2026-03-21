@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c8r4d1uu2eki1"]
 
-[ext_resource type="Script" uid="uid://cm7ba5xnredha" path="res://scripts/bomb.gd" id="1_bomb_script"]
+[ext_resource type="Script" uid="uid://cm7ba5xnredha" path="res://components/items/bomb/bomb.gd" id="1_bomb_script"]
 [ext_resource type="Texture2D" uid="uid://dm2uhsol7j06q" path="res://assets/Pirate Bomb/Sprites/7-Objects/1-BOMB/3-Explotion/1.png" id="1_o4q78"]
 [ext_resource type="Texture2D" uid="uid://d0l2cmvs1lhi0" path="res://assets/Pirate Bomb/Sprites/7-Objects/1-BOMB/3-Explotion/2.png" id="2_admb8"]
 [ext_resource type="Texture2D" uid="uid://crejgypx87mnb" path="res://assets/Pirate Bomb/Sprites/7-Objects/1-BOMB/3-Explotion/3.png" id="3_q6q46"]

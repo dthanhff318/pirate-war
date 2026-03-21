@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://dwc0olrvnhebe"]
+[gd_scene format=3 uid="uid://cx8cf10v37u2t"]
 
-[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_enemy"]
+[ext_resource type="Script" uid="uid://b3b614udl7isc" path="res://components/enemies/enemy.gd" id="1_enemy"]
 [ext_resource type="Texture2D" uid="uid://qyw58bn85vw" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/1-Idle/1.png" id="1_nmjvq"]
 [ext_resource type="Texture2D" uid="uid://b8k2pjylc2ch5" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/1-Idle/2.png" id="2_3eqgl"]
 [ext_resource type="Texture2D" uid="uid://q40el1vfh1eu" path="res://assets/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/1-Idle/3.png" id="3_1g4pj"]
